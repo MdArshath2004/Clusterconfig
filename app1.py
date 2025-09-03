@@ -1,3 +1,5 @@
+import os
+os.environ["STREAMLIT_SERVER_FILEWATCHER_TYPE"] = "none"
 import streamlit as st
 import pandas as pd
 import numpy as np
@@ -209,4 +211,5 @@ if st.button("Analyze Job & Get Recommendations"):
             "Cores": rec['cores'],
             "Memory (GB)": rec['mem_in_GB']
         })
+
     st.dataframe(pd.DataFrame(table_data).set_index('Rank'))

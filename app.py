@@ -1,3 +1,6 @@
+import os
+os.environ["STREAMLIT_SERVER_FILEWATCHER_TYPE"] = "none"
+
 import streamlit as st
 import pandas as pd
 import numpy as np
@@ -188,4 +191,5 @@ if st.button("Analyze Job & Get Recommendations"):
             "Estimated Cost": f"${rec['estimated_cost']:.2f}",
             
         })
+
     st.dataframe(pd.DataFrame(table_data).set_index('Rank'))
